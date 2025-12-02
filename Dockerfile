@@ -1,13 +1,14 @@
-# Stage 1 - Build the JAR using Maven
+# Stage 1 - Build the Spring Boot application
 FROM maven:3.9.6-eclipse-temurin-17 AS builder
 WORKDIR /app
 
-COPY pom.xml .
-COPY src ./src
+# Copy only the backend project structure
+COPY Interview_tracker/interviewtracker/pom.xml .
+COPY Interview_tracker/interviewtracker/src ./src
 
 RUN mvn clean package -DskipTests
 
-# Stage 2 - Run the application using a lightweight JDK image
+# Stage 2 - Run the built jar
 FROM eclipse-temurin:17-jdk-alpine
 WORKDIR /app
 
