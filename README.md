@@ -1,6 +1,3 @@
-Here is a clean, professional, human-sounding README for your backend repository. You can paste directly into GitHub.
-
----
 
 # Interview Tracker — Backend
 
